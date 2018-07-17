@@ -4,6 +4,7 @@ import os
 
 class QhullConan(ConanFile):
     name = "QHull"
+    version = "2015.2"
     license = "https://github.com/Av3m/conan-qhull.git"
     url = "http://www.qhull.org"
     settings = "os", "compiler", "build_type", "arch"
@@ -13,7 +14,8 @@ class QhullConan(ConanFile):
     
     def source(self):
         self.run("git clone https://github.com/qhull/qhull.git")
-        self.run("cd qhull && git checkout %s" %(self.version) )
+        self.run("cd qhull && git checkout 5a79a0009454c86e9848646b3c296009125231bf")
+        # self.run("cd qhull && git checkout %s" %(self.version) )
         # This small hack might be useful to guarantee proper /MT /MD linkage in MSVC
         # if the packaged project doesn't have variables to set it properly
         

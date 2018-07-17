@@ -20,12 +20,12 @@ class PclConan(ConanFile):
     """
             
     def requirements(self):
-      self.requires("Eigen3/3.3.4@%s/%s"%(self.user, self.channel))
-      self.requires("VTK/7.1.1@%s/%s"%(self.user, self.channel))
+      self.requires("eigen/3.3.4@conan/stable")
+      self.requires("VTK/7.1.0@bilke/stable")
+#      self.requires("VTK/7.1.1@%s/%s"%(self.user, self.channel))
       self.requires("flann/1.8.4@%s/%s"%(self.user, self.channel))
       self.requires("QHull/2015.2@%s/%s"%(self.user, self.channel))
       self.requires("boost/1.66.0@conan/stable")
-      self.requires("flann/1.8.4@%s/%s"%(self.user, self.channel))
       
     def source(self):
         self.run("git clone --branch pcl-%s --single-branch https://github.com/PointCloudLibrary/pcl.git" %(self.version))
